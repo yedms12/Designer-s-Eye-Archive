@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+
+        body {
+            font-family: "Pattaya", sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            margin: 0;
+            cursor: none;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 6.5em;
+            text-align: center;
+            margin: 0;
+            color: #FF00FA;
+            padding-left: 50px;
+            line-height: 1.1;
+            margin-top: -40px;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 0;
+            padding-top: 30px;
+        }
+        .game-container {
+            padding-top: 80px;
+            display: flex;
+            gap: 200px;
+        }
+        .game {
+            text-align: center;
+        }
+        .game img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .game img:hover {
+            transform: scale(1.1);
+        }
+        .game-title {
+            margin-top: 10px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            transition: transform 0.1s ease;
+        }
+        .pink {
+    color: #FF00FA
+}
+    </style>
+</head>
+<body>
+    <h1>Welcome to<br>Designer's Eye Game Archive</h1>
+    <h2>우리의 눈은 얼마나 정확할까요? 내 눈의 정확도를 알아보는 게임! 가볍게 즐겨주세요!
+    <div class="game-container">
+        <div class="game" style="height: 70%;">
+            <a href="https://yedms12.github.io/Designer-s-Eye1/">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExM245MGd4eXRydTR1Y3c4NHYzeDRsenF3ZW4yNmh0bTBjdHN4cXRmcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/kG9RZD0aaKFAo5txJg/giphy.gif" alt="Game 1">
+            </a>
+            <div class="game-title"><span class="pink">1</span><br>Guess the center<br>도형의 중심을 찾아봐요!</div>
+        </div>
+        <div class="game">
+            <a href="https://yedms12.github.io/Designer-s-Eye2/">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWozN2Nod3Z1czZ6ODNtZXkzNHd4ZGlva3hnMWtxOGFpcGdxaDB1bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ibAxINQ2TECYFHzg2d/giphy.gif" alt="Game 2">
+            </a>
+            <div class="game-title"><span class="pink">2</span><br>Guess the different color<br>다른 색상을 찾아봐요!</div>
+        </div>
+        <div class="game">
+            <a href="https://yedms12.github.io/Designer-s-Eye_3/">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjZrNGhvY3Nrdm5uczlscWVsdGpobXF2MW0zNXF2b2xxeDZpNTJlYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/J4JjlXaF9GjQWQbOTL/giphy.gif" alt="Game 3">
+            </a>
+            <div class="game-title"><span class="pink">3</span><br>Adjust the gap<br>도형의 간격을 맞춰봐요!</div>
+            <div class="cursor" id="cursor"></div>
+        </div>
+    </div>
+    <script>
+        const cursor = document.getElementById("cursor");
+        document.addEventListener("mousemove", (e) => {
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+        });
+    </script>
+</body>
+</html>
